@@ -15,16 +15,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16.20.2'
+          node-version: '18.17.1'
 
       - name: Install Dependencies
         run: npm install
 
       - name: Build
-        run: npm run build
+        run: npm run build  # Sørg for, at du har et "build"-script i din package.json
 
       - name: Deploy to Azure
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'GetUrlStaticWebApp'
           package: '.'
+          app_build_command: 'npm run din-kommando-til-at-bygge-din-app'  # Tilføj denne linje

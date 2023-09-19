@@ -26,5 +26,5 @@ jobs:
       - name: Deploy to Azure
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'GetUrlStaticWeb'
+          app-name: 'GetUrlStaticWebApp'
           package: '.'
